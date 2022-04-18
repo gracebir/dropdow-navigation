@@ -22,11 +22,15 @@ const DropBottom = styled.div`
     align-items: center;
     gap: .2em;
     cursor: pointer;
-    margin-bottom: 1em;
 `
 
 const DropdownLabel = styled.span`
     font-size: .9em;
+    color: var(--medium-gray);
+    font-weight: bold;
+    &:hover{
+        color: var(--almost-black);
+    }
 `
 
 const DropdowContent = styled.div`
@@ -34,6 +38,7 @@ const DropdowContent = styled.div`
     background-color: var(--almost-white);
     @media (min-width: 45em) {
         border-radius: 10px;
+        margin-top: 1em;
         box-shadow: 0px 8px 16px 0px var(--medium-gray);
         z-index: 1;
         padding: 1em 1.4em;
@@ -79,7 +84,7 @@ function DropDown({
              <DropdowContent>
                {items?.map((item, i)=>(
                     <DropItemGroup>
-                        {item.imgUrl ? <img src={item.imgUrl}/>: null}
+                        {item.imgUrl ? <img src={item?.imgUrl}/>: null}
                         <ItemText>{item.itemLabel}</ItemText>
                     </DropItemGroup>
                ))}
